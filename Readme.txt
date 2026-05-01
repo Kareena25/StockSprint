@@ -1,36 +1,64 @@
-# StockSprint Backend (Member 2)
+# StockSprint Backend
 
-## Overview
-This backend system is designed for inventory and order management in quick‑commerce platforms.  
-My part includes creating models and implementing business logic functions.
+## 📌 Overview
+StockSprint is a smart inventory and order management backend system designed for quick-commerce platforms (like Blinkit/Zepto).
 
-## Setup Instructions
-1. Make sure Node.js is installed.
-2. Open terminal and go to the project folder: cd StockSprint
-3. Install dependencies: npm install
-4. Run the demo: node demo.js
+This system manages products, tracks warehouse stock, processes customer orders, and performs intelligent decision-making such as selecting the best warehouse and suggesting alternatives when products are unavailable.
 
-## Models (Schemas)
-- Product.js → Stores product details (name, price)
-- Warehouse.js → Stores warehouse and stock details
-- Order.js → Stores customer orders
+## ⚙️ Setup Instructions
+1. Make sure Node.js is installed  
+2. Open terminal and navigate to project folder:
+   cd StockSprint  
+3. Install dependencies:
+   npm install  
+4. Run the project:
+   node demo.js  
 
-## Business Logic Functions
-- updateStock(productId, warehouseId, qty) → Updates warehouse stock
-- placeOrder(customerId, productId, qty) → Creates an order and reduces stock
-- checkLowStock(threshold) → Alerts if stock is below threshold
-- dailyOrders() → Counts total orders placed in a day
-- stockSummary() → Shows total stock per product
+## 🗂️ Models (Schemas)
+- Product.js → Stores product details (name, price, category)  
+- Warehouse.js → Stores warehouse information and stock levels  
+- Order.js → Stores customer order data  
 
-## Expected Output (Proof)
-When you run `node demo.js`, terminal output will show:
-- DB Connected
-- Dummy data inserted
-- Order JSON printed
-- Low Stock Alerts
-- Daily Orders
-- Stock Summary
+## 🧠 Core Functionalities
 
-## Notes
-- MongoDB must be running locally (default: mongodb://127.0.0.1:27017/stocksprint).
-- The demo inserts dummy data and tests the functions.
+### 🔹 Stock Management
+- Updates product quantity in warehouses  
+- Automatically adjusts stock when orders are placed  
+
+### 🔹 Order Processing
+- Creates customer orders  
+- Reduces stock after successful order placement  
+
+### 🔥 Smart Features
+- Auto Warehouse Selection → Selects the best warehouse based on available stock  
+- Alternative Product Suggestion → Suggests similar products if item is out of stock  
+- Low Stock Alerts → Identifies products below a threshold  
+
+### 📊 Analytics
+- Daily Orders → Counts total orders per day  
+- Stock Summary → Shows total stock per product  
+
+## 🧪 Expected Output
+When running:
+node demo.js
+
+The system will:
+- Connect to MongoDB  
+- Insert dummy data  
+- Create an order  
+- Update stock automatically  
+- Show low stock alerts  
+- Display daily order stats  
+- Display stock summary  
+
+## 🗄️ Database
+MongoDB is used as the database  
+Connection URL:
+mongodb://127.0.0.1:27017/stocksprint  
+
+Data is handled dynamically using Mongoose  
+
+## 💡 Notes
+- MongoDB must be running locally  
+- Data is automatically inserted and updated by backend logic  
+- System demonstrates real-time inventory updates and smart order processing  
